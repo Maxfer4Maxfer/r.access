@@ -1,0 +1,35 @@
+#!/bin/bash
+#set -x
+
+# Setup:
+# 1 - vi /usr/local/sbin/raccess
+# 2 - chmod +x /usr/local/sbin/raccess
+#
+
+#
+# Var definitions
+#
+APP_DIR="$HOME/Dropbox/Apps/tmate.url"
+
+APP_FILE="$APP_DIR/tmate.url"
+NAME=$1
+APP_FILE="$APP_FILE.$NAME"
+
+SSH=`which ssh`
+
+
+
+if [ "$1" == "list" ]; then
+  FILES=`ls $APP_DIR | grep tmate`
+  for F in $FILES
+  do
+     CONN_STRING=`cat $APP_DIR/$F`
+     F=`echo $F | sed "s/tmate.url.//g"`
+     echo "$CONN_STRING #$F"
+  done
+  exit 0
+
+fi
+
+CONN_STRING=`cat $APP_FILE | awk {'print $2'}`
+$SSH $CONN_STRING
