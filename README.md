@@ -1,16 +1,16 @@
 # R.Access
 
-R.Access is an light and open source tool which allowes you keep terminal access to all of your devices placed behind firewalls, proxy and NAT.
+R.Access is an light and open source tool which allows you keep ssh access to all of your devices placed behind firewalls, proxy and NAT.
 
 R.Access is based on two open source projects [kmate](https://kmate.io) and [Dropbox-Uploader](https://github.com/andreafabrizi/Dropbox-Uploader).
 
-* **Up and runnging:**  you never loose your  connection even after rebooting a remote device.
+* **Up and running:**  you never loose your  connection even after rebooting a remote device.
 
 * **Access from anywhere at anytime:**  be in touch with your devices wherever you are. No need to set up VPN, Port Forwarding or have public IPs.
 
 **Why it is called "R.Access"**
 
-Firstly I was lookign for a convinient and free solution to access my home rassberry pi. That why "R". Now I put R.Access in my swiss army knife and use it everywhare where is no other way to reach remote servers e.g. servers behind firewalls or NAT without public IP or restriction for port forwarding. R becomes for Remote.
+I was looking for a convenient and free solution to access my home raspberry pi. That is why "R". Now I put R.Access in my Swiss Army knife and use it everywhere where is no other way to reach remote servers e.g. servers behind firewalls or NAT without public IP or restriction for Port Forwarding. R becomes for Remote.
 
 
 ## Getting started
@@ -28,7 +28,7 @@ Firstly I was lookign for a convinient and free solution to access my home rassb
 
   Change initials variables specific for you installation
   ```bash
-    NAME='hostname'                  #indentificator of your host
+    NAME=`hostname`                  #identificator of your host
     OUTPUT_FILE="/tmp/tmate.url"     #file where connection string is stored
     DROPBOX_UPLOADER="/usr/local/sbin/dropbox_uploader.sh"
   ```
@@ -39,12 +39,12 @@ Firstly I was lookign for a convinient and free solution to access my home rassb
     sudo chmod +x /usr/local/sbin/raccessd
   ```
 
-  Add pereodical check you crontab
+  Add record to crontab
   ```bash
     crontab -e
       */5 * * * *  /usr/local/sbin/raccessd monitor
   ```
-  Make shure that after manually ranning "/usr/local/sbin/raccessd monitor" you get tmate.url.<hostmane> file in you Dropbox App's directory.
+  Make shure that after manually running "/usr/local/sbin/raccessd monitor" you get tmate.url.<hostmane> file in you Dropbox App's directory.
 
 2. Local machine
 

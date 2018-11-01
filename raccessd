@@ -11,7 +11,7 @@
 #
 # Var definitions
 #
-NAME=`hostname`                 #indentificator of your host
+NAME=`hostname`                 #identificator of your host
 OUTPUT_FILE="$HOME/tmate.url"   #file where connection string is stored
 DROPBOX_UPLOADER="/usr/local/sbin/dropbox_uploader.sh"
 
